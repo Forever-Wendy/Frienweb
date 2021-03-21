@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>交友网站</title>
+    <link rel="stylesheet" type="text/css" href="homepage.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="ajax方式">
+    <script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="homepage.js"></script>
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="menu-activea">
+        <h1>Menu</h1>
+        <ul>
+            <img id="user_img" name="user_img" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/头像.png">
+            <li onclick="findAllUser(1)">网站主页</li>
+            <li onclick="check_usermessage()">修改资料</li>
+            <li onclick="showsf()">上传身份证</li>
+            <li onclick="userexit()">退出登录</li>
+        </ul>
+    </nav>
+    <main>
+        <div class="main_div">
+            <div class="head_div bar1" id="search" >
+                <form class="search_form" id="search_form" onsubmit="return false" action="##" method="POST">
+                    <input class="search_input" name="search_in" type="text" placeholder="请输入您要搜索的用户名...">
+                    <button class="search_button" onclick="search_user()"></button>
+                </form>
+            </div>
+
+            <div class="body_div" id="user_message">
+                <form  id="formregister" class="form-box back"  method="post" enctype="multipart/form-data" onsubmit="return false" action="##">
+                    <h1>修改信息</h1>
+                    <p class="register-p" id="user_name">
+                        <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/用户.png">
+                        用户姓名:</p>
+
+                    <p class="register-p">
+                        <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/密码.png">
+                        用户密码:
+                        <input class="register-input" id="password1" name="pword" type="password" required></p>
+
+                    <p class="register-p">
+                        <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/确认密码.png">
+                        确认密码:
+                        <input class="register-input" id="surePassword" name="sword" type="password" required></p>
+
+
+
+                    <div class="sexDiv">
+                        <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/性别.png">
+                        用户性别:&nbsp;&nbsp;
+                        <input class="userSex" id="boy" name="sex" value="boy" type="radio">男
+                        <input class="userSex" id="girl" name="sex" value="girl" type="radio">女
+                    </div>
+
+                    <p class="register-p">
+                        <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/手机.png">
+                        手机号码:
+                        <input class="register-input" id="phone" name="phonenumber" type="text" required>
+                    </p>
+
+                    <p class="register-p">
+                        <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/邮件.png">
+                        电子邮件:
+                        <input class="register-input" id="email" name="email" type="email" required>
+                    </p>
+                    <p class="register-p">
+                        <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/介绍.png">
+                        自我介绍:
+                    </p>
+                    <div class="introduce">
+                        <textarea name="introduce" cols="30" id="introduceText"  required rows="10"></textarea>
+                    </div>
+                    <p class="register-p" id="images">
+                        <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/头像.png">
+                        修改头像:
+                        <input class="register-input" id="image" name="image" onchange="picture(this)" type="file">
+                    </p>
+                    <p style="margin:5px 0px 0px 180px">
+                        <img id="register_picture" style="display: none">
+                    </p>
+                    <p class="register-p" style="text-align: center;">
+                        <button class="register-input"  value="修改" onclick="change_message()">修改</button>
+                        <input class="register-input" type="reset" value="重置" onclick="resets()">
+                    </p>
+                </form>
+            </div>
+
+            <div class="body_div" id="AllUser_message">
+                <ul class="message_ul">
+                    <li class="message_li"><a href="#">
+                        <img class="message_img" id="user1_img" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/头像.png">
+                        <h2 id="user1_name"></h2>
+                        <p id="user1_sex">性别：</p>
+                        <p id="user1_phone">手机号码：</p>
+                        <p id="user1_email">邮箱：</p>
+                        <p>自我介绍：</p>
+                        <p class="message_p" id="user1_message"></p>
+                    </a></li>
+                    <li class="message_li"><a href="#">
+                        <img class="message_img" id="user2_img" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/头像.png">
+                        <h2 id="user2_name"></h2>
+                        <p id="user2_sex">性别：</p>
+                        <p id="user2_phone">手机号码：</p>
+                        <p id="user2_email">邮箱：</p>
+                        <p>自我介绍：</p>
+                        <p class="message_p" id="user2_message"></p>
+                    </a></li>
+                    <li class="message_li"><a href="#">
+                        <img class="message_img" id="user3_img" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/头像.png">
+                        <h2 id="user3_name"></h2>
+                        <p id="user3_sex">性别：</p>
+                        <p id="user3_phone">手机号码：</p>
+                        <p id="user3_email">邮箱：</p>
+                        <p>自我介绍：</p>
+                        <p class="message_p" id="user3_message"></p>
+                    </a></li>
+                    <li class="message_li"><a href="#">
+                        <img class="message_img" id="user4_img" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/头像.png">
+                        <h2 id="user4_name"></h2>
+                        <p id="user4_sex">性别：</p>
+                        <p id="user4_phone">手机号码：</p>
+                        <p id="user4_email">邮箱：</p>
+                        <p>自我介绍：</p>
+                        <p class="message_p" id="user4_message"></p>
+                    </a></li>
+                </ul>
+            </div>
+
+            <div class="body_div" id="show_shenfen">
+
+                <form id="shou_shenfen" onsubmit="return false" method="post" action="##">
+                    <h1>上传身份证</h1>
+                    <p class="register-p" id="shenfen_details">
+
+                    </p>
+                    <p class="register-p" id="shenfen_image">
+                        <input type="file" id="pic" name="pic" onchange="sf_picture(this)">
+                        <img id="showimage" style="width: 100px;height: 80px;display: none;">
+                    </p>
+
+                    <button class="register-input"  value="提交" onclick="checkregsf()">提交</button>
+                    <input class="register-input" type="reset" value="重置" onclick="resets()">
+
+                </form>
+            </div>
+
+            <div class="foot_div" id="foot_div">
+                <div class="container large">
+                    <div class="pagination">
+                        <ul id="pageNav">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="homepage_turn.js"></script>
+</body>
+</html>

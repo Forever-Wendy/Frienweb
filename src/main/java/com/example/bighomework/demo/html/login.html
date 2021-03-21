@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="ajax方式">
+    <script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="login.js"></script>
+</head>
+
+<body>
+<canvas class="cavs" width="1575" height="1337"></canvas>
+<div class="mainbody middle" id="loginDiv">
+    <form id="formlogin" class="form-box front" onsubmit="return false" method="post" action="##">
+        <h1 style="text-align: center;color: aliceblue;">登录</h1>
+        <p class="login-p">
+            <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/用户.png">
+            用户名:
+            <input class="login-input" id="userNname" name="loginuname" type="text"><label id="name_trip"></label></p>
+
+        <p class="login-p">
+            <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/密码.png">
+            密码:&nbsp;
+            <input class="login-input" id="password" name="loginpword" type="password"><label id="password_trip"></label></p>
+
+        <div style="text-align: center;margin-top: 30px;">
+            <button class="login-input" id="logininput" value="登录" onclick="checklogin()">登录</button>
+            <input class="login-input" type="reset"  value="重置">
+        </div>
+        <div>
+            <p class="logins-p" style="margin-top: 40px">If you don't have account.Please</p>
+            <p class="logins-p">Click here to <a id="sigup">注册</a></p>
+            <script type="text/javascript">
+                // 点击sigup触发翻转样式
+                $("#sigup").click(function() {
+                    $(".middle").toggleClass("middle-flip");
+                });
+            </script>
+        </div>
+    </form>
+
+    <form  id="formregister" class="form-box back"  method="post" enctype="multipart/form-data" onsubmit="return false" action="##">
+        <h1>注册</h1>
+        <p class="register-p">
+            <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/用户.png">
+            用户姓名:
+            <input class="register-input" id="userNname1" name="uname" type="text" autofocus required></p>
+
+        <p class="register-p">
+            <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/密码.png">
+            用户密码:
+            <input class="register-input" id="password1" name="pword" type="password" required></p>
+
+        <p class="register-p">
+            <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/确认密码.png">
+            确认密码:
+            <input class="register-input" id="surePassword" name="sword" type="password" required></p>
+
+
+
+        <div class="sexDiv">
+            <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/性别.png">
+            用户性别:&nbsp;&nbsp;
+            <input class="userSex" name="sex" value="boy" type="radio">男
+            <input class="userSex" name="sex" value="girl" type="radio">女
+        </div>
+
+        <p class="register-p">
+            <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/手机.png">
+            手机号码:
+            <input class="register-input" id="phone" name="phonenumber" type="text" required>
+        </p>
+
+        <p class="register-p">
+            <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/邮件.png">
+            电子邮件:
+            <input class="register-input" id="email" name="email" type="email" required>
+        </p>
+        <p class="register-p">
+            <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/介绍.png">
+            自我介绍:
+        </p>
+
+        <div class="introduce">
+            <textarea name="introduce" cols="30" id="introduceText"  required rows="10"></textarea>
+        </div>
+        <p class="register-p" id="images">
+            <img class="image" src="http://localhost:63342/bighomework/com/example/bighomework/demo/images/头像.png">
+            上传头像:
+            <input class="register-input" id="image" name="image" type="file" onchange="picture(this)" required>
+        </p>
+        <p style="margin:5px 0px 0px 180px">
+            <img id="register_picture" style="display: none">
+        </p>
+        <p class="register-p" style="text-align: center;">
+            <button class="register-input"  value="提交" onclick="checkregister()">提交</button>
+            <input class="register-input" type="reset" value="重置" onclick="resets()">
+        </p>
+
+        <div>
+            <p class="logins-p" style="margin-top: 40px">Have an account ? You can</p>
+            <p class="logins-p">Click here to <a id="login">登录</a></p>
+            <script type="text/javascript">
+                // 点击login触发翻转样式
+                $("#login").click(function() {
+                    $(".middle").toggleClass("middle-flip");
+                });
+            </script>
+        </div>
+    </form>
+</div>
+<!--<script src="batsCursor.js" type="text/javascript"></script>-->
+</body>
+</html>
+
+<script src="ban.js"></script>

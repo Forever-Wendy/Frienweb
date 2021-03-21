@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background: url("http://localhost:63342/bighomework/com/example/bighomework/demo/images/bg1.jpg") no-repeat 0px 0px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+}
+
+.cavs{
+    z-index:0;
+    position: fixed;
+    width:95%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+ #loginDiv {
+     width: 37%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 800px;
+     background-color: rgba(4, 4, 5, 0.4);
+     box-shadow: 7px 7px 17px rgba(52, 56, 66, 1);
+     border-radius: 5px;
+     -webkit-filter：blur(0px);
+     filter:blur(0px);
+ }
+ #form1{
+    -webkit-filter：blur(0px);
+     filter:blur(0px);
+ }
+
+#name_trip {
+    margin-left: 50px;
+    color: red;
+}
+
+.login-p {
+    margin-top: 30px;
+    margin-left: 20px;
+    color: azure;
+}
+.logins-p{
+    margin: 15px auto;
+    padding: 0;
+    font-size: 16px;
+    color: white;
+    display: block;
+    text-align: center;
+}
+
+#register_picture{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-style: none;
+}
+
+
+.register-p,
+.sexDiv{
+    margin-top: 10px;
+    margin-left: 20px;
+    color: azure;
+}
+
+.login-input{
+    margin-left: 15px;
+    border-radius: 5px;
+    border-style: hidden;
+    height: 30px;
+    width: 140px;
+    background-color: rgba(216, 191, 216, 0.5);
+    outline: none;
+    color: #f0edf3;
+    padding-left: 10px;
+    text-align: center;
+}
+
+#password{
+    margin-left: 26px;
+}
+
+.register-input,
+select{
+    margin-left: 15px;
+    border-radius: 5px;
+    border-style: hidden;
+    height: 30px;
+    width: 140px;
+    background-color: rgba(216, 191, 216, 0.5);
+    outline: none;
+    color: #f0edf3;
+    padding-left: 10px;
+}
+
+
+
+.sexDiv>input{
+    width: 30px;
+    height: 17px;
+}
+
+.introduce {
+    margin-left: 110px;
+}
+
+.introduce>textarea {
+    background-color: rgba(216, 191, 216, 0.5);
+    border-style: hidden;
+    outline: none;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: #f0edf3;
+}
+
+b {
+    margin-left: 50px;
+    color: #FFEB3B;
+    font-size: 10px;
+    font-weight: initial;
+}
+
+.front {
+    transform: rotateY(0deg);
+}
+
+/* 将back旋转180度，背面朝向用户，我这边选y轴的 */
+.back {
+    transform: rotateY(-180deg);
+}
+
+.front,
+.back {
+    position: absolute;
+    /* 然后设置为背面朝向用户时不可见 */
+    backface-visibility: hidden;
+    /* 我觉得用linear顺滑一点 */
+    transition: 0.3s linear;
+}
+
+/* 将front旋转180度 */
+.middle-flip .front{
+    transform: rotateY(180deg);
+}
+/* 将back旋转180度 */
+.middle-flip .back{
+    transform: rotateY(0deg);
+}
+
+/*居中效果*/
+.middle {
+    /*使左上角对应到父元素的中心*/
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    /*向左向上偏移50%*/
+    transform: translate(-50%, -50%);
+}
+
+a {
+    color: rgba(216, 191, 216, 0.5);
+    cursor: pointer;
+}
+option{
+    color: black;
+}
+
+#image{
+    width: 160px;
+}
+.image{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin:0 auto;
+    text-align: center;
+}
+
+

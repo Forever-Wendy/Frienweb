@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>身份证信息显示</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="ajax方式">
+    <script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="shenfen.js"></script>
+</head>
+<body>
+    <form id="shou_shenfen" onsubmit="return false" method="post" action="##">
+        <input type="file" id="pic" name="pic" onchange="picture(this)">
+        <img id="showimage" style="width: 100px;height: 80px">
+        <button class="register-input"  value="提交" onclick="checkregsf()">提交</button>
+        <input class="register-input" type="reset" value="重置" onclick="resets()">
+    </form>
+
+</body>
+</html>
